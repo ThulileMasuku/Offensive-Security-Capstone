@@ -29,12 +29,9 @@ This repository documents the findings, methodology, and results of an offensive
 
 ```
 Offensive-Security-Capstone/
-├── README.md                  # This file
-├── Final_Report.docx          # Full technical report
-├── logs/
-│   └── command_execution.log  # Full command log with results
-└── findings/
-    └── flags.txt              # Captured flags/secrets
+├── README.md                            # This file — project overview & quick reference
+├── Final_CAPSTONE_REPORT.md             # Full technical report (Markdown)
+└── Thulile_Masuku_Capstone_Report.pdf   # Full technical report (PDF, formatted)
 ```
 
 ---
