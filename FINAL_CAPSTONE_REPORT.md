@@ -1,70 +1,73 @@
-# Offensive Security Capstone: Complete Audit & Execution Log
-**Candidate:** Thulile Masuku  
-**Date:** April 2026  
-**System ID Verified:** 234933  
+# Offensive Security Capstone - Technical Report
+
+## 👤 Candidate Information
+- **Name:** Thulile Masuku
+- **Date:** April 2026
+- **Project Type:** Cybersecurity / Offensive Security
+
+## 🎯 Project Objective
+The goal of this capstone was to perform a system-level audit and verification of a target Nginx server to extract unique hardware identifiers and confirm administrative access.
+
+## 🔍 Execution Steps
+1. **System Reconnaissance:** Navigated the Linux file system to locate hardware-level configuration files.
+2. **Data Extraction:** Successfully extracted the Board Name/ID from the DMI system class.
+3. **Environment Isolation:** Managed the transition between a Dockerized lab environment and the local Kali Linux host.
+4. **Version Control:** Documented findings and synchronized local results with the remote GitHub repository using Git best practices.
+
+## ✅ Results Summary
+The project status was confirmed as **Completed Successfully**. 
+The hardware identification string **234933** was validated against the capstone requirements.
 
 ---
 
-## 1. SUCCESSFUL EXECUTION PATH
+## 💻 FULL COMMAND EXECUTION LOG
+
+### 1. Successful Path (The "Wins")
 *The following commands successfully extracted the required system data.*
 
-### A. Hardware Identification
 ```bash
 # Navigating to the kernel's hardware identification directory
 cd /sys/class/dmi/id/
 
-# Extracting the unique Board Identifier
+# Extracting the unique Boars identifier
+
 cat board_name
 # RESULT: 234933
-
-Web Server Status
-Bash
 
 # Verifying the target Nginx service was operational
 service nginx status
 # RESULT: Active (running)
 
-TROUBLESHOOTING: "EMPTY" RESULTS & SEARCHES
+2. Troubleshooting: "Empty" Results & Searches
 
-The following commands were part of the audit process but returned no data (null), confirming environment isolation.
-A. Host-Level Search for Lab Files
+The following commands were part of the audit process but returned no data (null), confirming environment isolation between the Lab and the Host.
 Bash
 
 # Searching the Kali host for files that existed only in the lab container
 find ~ -maxdepth 2 -name "*capstone*"
 # RESULT: (Empty/Nothing returned)
 
-irectory Audit
-Bash
-
 # Checking for project-specific directories in the root home folder
 ls -la | grep "alx"
 # RESULT: (No matching lines found)
 
-TECHNICAL ERRORS & FAILURES
+3. Technical Errors & Fatal Failures
 
-Documenting the 'Fatal' errors encountered during the deployment phase.
-A. Git State Error
+Documenting the obstacles encountered during the deployment phase.
 
-    Command: git push origin main
+    Error: fatal: updating an unborn branch...
 
-    Error: fatal: updating an unborn branch with changes added to the index
-
-    Cause: Attempting to update a branch before the initial commit was registered.
+    Context: Occurred during initial git push before a commit was established.
 
     Resolution: Force-reset the Git directory using rm -rf .git and git init.
 
-B. Remote Push Refusal
+    Error: error: failed to push some refs...
 
-    Command: git push -u origin main
+    Context: Divergence between local and remote history.
 
-    Error: error: failed to push some refs to [URL]
+    Resolution: Used git push -f to synchronize final documentation.
 
-    Cause: Divergence between local and remote repository history.
-
-    Resolution: Used git push -f to synchronize the final as-built documentation.
-
-GITHUB HURDLES & AUTHENTICATION
+🔐 GITHUB HURDLES & AUTHENTICATION
 
 Summary of the security obstacles faced while connecting to the remote repository.
 
@@ -72,10 +75,12 @@ During the final submission phase, standard Password Authentication was denied b
 
 Resolution Strategy:
 
-    Shifted from the root terminal to the User Shell for consistent permissions.
+    Environment Shift: Transitioned from the root terminal to the User Shell for consistent permissions.
 
-    Generated a GitHub Personal Access Token (Classic).
+    Credential Bypass: Generated a GitHub Personal Access Token (Classic) with full repo scopes.
 
-    Updated scopes to include full repo control.
+    Final Deployment: Authenticated successfully using the token as a secure password bypass to push the final repository: Offensive-Security-Capstone.
 
-    Authenticated successfully using the token as a secure password bypass.========
+FINAL STATUS: ALL TASKS VERIFIED AND SYNCED.
+
+
