@@ -5,6 +5,12 @@
 - **Date:** April 2026
 - **Project Type:** Cybersecurity / Offensive Security
 
+## 📄 Project Context
+- **Client:** Lively-Events (Event Booking Platform)
+- **Target IP:** 172.20.0.3
+- **Lead Consultant:** Sarah Mitchell
+- **Objective:** Identify vulnerabilities and retrieve 4 hidden secrets (flags) to demonstrate real-world impact.
+
 ## 🎯 Project Objective
 The goal of this capstone was to perform a system-level audit and verification of a target Nginx server to extract unique hardware identifiers and confirm administrative access.
 
